@@ -1,33 +1,172 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0d75ac57-9ed7-48e3-a671-41c99e3d2795" name="Changes" comment="" />
+    <list default="true" id="c0b2dcae-a747-4e27-b05e-1e030c2a215c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tp_002.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/oo2.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cipher_java/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cipher_java/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cipher_java/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cipher_java/cipher_java.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cipher_java/out/production/cipher_java/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cipher_java/out/production/cipher_java/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cipher_java/out/production/cipher_java/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cipher_java/out/production/cipher_java/cipher_java.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cipher_java/out/production/cipher_java/ciphercmd.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cipher_java/out/production/cipher_java/deciphercmd.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cipher_java/out/production/cipher_java/roo2/BouncingIndex.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cipher_java/out/production/cipher_java/roo2/CesarCipher.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cipher_java/out/production/cipher_java/roo2/CharRing.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cipher_java/out/production/cipher_java/roo2/Cipher.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cipher_java/out/production/cipher_java/roo2/RailFenceCipher.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cipher_java/out/production/cipher_java/roo2/VigenereCipher.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cipher_java/out/production/cipher_java/test/BouncingIndexTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cipher_java/out/production/cipher_java/test/CesarTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cipher_java/out/production/cipher_java/test/CharRingTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cipher_java/out/production/cipher_java/test/RailsFenceCipherTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cipher_java/out/production/cipher_java/test/VigenereTest.class" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectId" id="2G34qBOqnCpOdj91CD8LO6UA5OY" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2GCd5THyL9yfXqI8HHkWFMpYld0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/franco/Desktop/git_oo2"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
   }
 }]]></component>
+  <component name="RunManager" selected="JUnit.VigenereTest">
+    <configuration name="BouncingIndexTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tp_002" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.BouncingIndexTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CesarTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tp_002" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.CesarTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CharRingTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tp_002" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.CharRingTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RailsFenceCipherTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tp_002" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.RailsFenceCipherTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VigenereTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tp_002" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.VigenereTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.VigenereTest" />
+        <item itemvalue="JUnit.RailsFenceCipherTest" />
+        <item itemvalue="JUnit.CharRingTest" />
+        <item itemvalue="JUnit.CesarTest" />
+        <item itemvalue="JUnit.BouncingIndexTest" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="0d75ac57-9ed7-48e3-a671-41c99e3d2795" name="Changes" comment="" />
-      <created>1665604121906</created>
+      <changelist id="c0b2dcae-a747-4e27-b05e-1e030c2a215c" name="Changes" comment="" />
+      <created>1665896324814</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1665604121906</updated>
+      <updated>1665896324814</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
