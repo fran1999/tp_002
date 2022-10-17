@@ -6,6 +6,7 @@ import roo2.VigenereCipher;
 
 import static org.junit.Assert.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class VigenereTest {
     VigenereCipher vigenere;
@@ -25,6 +26,18 @@ public class VigenereTest {
         assertEquals(this.vigenere.cipher("cifrar"), "eqkiae");
         assertEquals(this.vigenere1.cipher("cifrar"), "eznjtz");
         assertEquals(this.vigenere2.cipher("123"), "479");
+    }
+    @Test
+    void testCipherDosVecesEquals() {
+
+        assertEquals(this.vigenere1.cipher("cifrar"), "eznjtz");
+        assertEquals(this.vigenere1.cipher("cifrar"), "cvtioe");
+    }
+    @Test
+    void testCipherDosVecesNotEquals() {
+
+        this.vigenere1.cipher("cifrar");
+        assertNotEquals(this.vigenere1.cipher("cifrar"), "eznjtz");
     }
 
     @Test
