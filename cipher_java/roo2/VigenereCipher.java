@@ -4,7 +4,7 @@ import roo2.CharRing;
 
 //import roo2.Cipher;
 
-public class  VigenereCipher implements Cipher {
+public class  VigenereCipher extends SubstitutionCipher {
     char[] alphabet;
     CharRing keyword;
     public  VigenereCipher(String inputAlphabet, String kword){
@@ -15,31 +15,13 @@ public class  VigenereCipher implements Cipher {
 
     public  VigenereCipher() {
         
-        String inputAlphabet = "abcdefghijklmnopqrstuvwxyz";
+        String inputAlphabet = DEFAULT_ALPHABET;
         alphabet = new char[inputAlphabet.length()];
         inputAlphabet.getChars(0,inputAlphabet.length(), alphabet, 0);
         keyword = new CharRing("a");
     };
 
-    public String cipher(String inputText){
-        char[] result = new char[inputText.length()] ;
-        inputText.getChars(0, inputText.length(), result, 0);
-
-        for (int idx=0; idx < result.length; idx++)
-            result[idx]=cipherChar(result[idx]);
-        return new String(result); 
-    }; 
-
-    public String decipher(String inputText){
-        char[] result = new char[inputText.length()] ;
-        inputText.getChars(0, inputText.length(), result, 0);
-
-        for (int idx=0; idx < result.length; idx++)
-            result[idx]=decipherChar(result[idx]);        
-        return new String(result); 
-    }; 
-
-    private char cipherChar( char inputChar){
+    protected char cipherChar( char inputChar){
         int offset;
         char result;
         
@@ -60,7 +42,7 @@ public class  VigenereCipher implements Cipher {
 
     };
 
-    private char decipherChar( char inputChar){
+    protected char decipherChar( char inputChar){
         int offset;
         char result;
         int idx=java.util.Arrays.binarySearch(alphabet,inputChar);
