@@ -3,8 +3,6 @@ package roo2;
 //import roo2.Cipher;
 
 public class  CesarCipher extends SubstitutionCipher {
-	final String DEFAULT_ALPHABET = "abcdefghijklmnopqrstuvwxyz";
-    char[] alphabet;
     int jump = 0;
     public  CesarCipher(int number, String inputAlphabet){
         alphabet = new char[inputAlphabet.length()];
@@ -21,44 +19,15 @@ public class  CesarCipher extends SubstitutionCipher {
     };
 
 
-    protected char cipherChar( char inputChar){
-        int offset;
-        char result;
-        int idx=java.util.Arrays.binarySearch(alphabet,inputChar);
-        
-        if(idx <0){
-            result= inputChar;
-        }
-        else{ offset = idx + jump;
-            if(offset<alphabet.length){
-                result= alphabet[offset];
-            }
-            else{
-                result= alphabet[offset - alphabet.length];
-            }
-        }
-        return result;
+	@Override
+	protected char callCipherChar(char inputChar) {
+		// TODO Auto-generated method stub		
+		return this.cipherChar(inputChar,this.jump);
+	}
 
-    };
-
-    protected char decipherChar( char inputChar){
-        int offset;
-        char result;
-        int idx=java.util.Arrays.binarySearch(alphabet,inputChar);
-        
-        if(idx <0){
-            result =inputChar;
-        }
-        else{ 
-            offset = idx - jump;
-            
-            if(offset>=0){
-                result= alphabet[offset];
-            }
-            else{
-                result= alphabet[ alphabet.length + offset];
-            }
-        }
-        return result;
-    };
+	@Override
+	protected char callDecipherChar(char inputChar) {
+		// TODO Auto-generated method stub
+		return this.decipherChar(inputChar,this.jump);
+	};
 }
