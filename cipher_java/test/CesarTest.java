@@ -55,19 +55,38 @@ public class CesarTest {
 
 
     @Test
-    public void testCipherConNull(){
-        assertThrows(NullPointerException.class,()->{
-            cesar1.cipher(null);} );
-    }
+    public void testCipherConDistintasDistancia(){
+        CesarCipher cesar = new CesarCipher(5);
+        CesarCipher cesar1 = new CesarCipher(10);
 
+        assertEquals(cesar.cipher("abcd"),"fghi");
+        assertEquals(cesar.cipher("xyz"),"cde");
+
+        assertEquals(cesar1.cipher("abcd"),"klmn");
+        assertEquals(cesar1.cipher("xyz"),"hij");
+
+    }
 
     @Test
-    public void testDecipherConNull(){
-        assertThrows(NullPointerException.class, ()->{
-            cesar1.decipher(null);} );
+    void testCipherConCaracteresOutOfKeyboard(){
+
+        assertEquals(cesar1.cipher("ab!c·d"),"de!f·g");
+        assertEquals(cesar1.cipher("abcd"),"defg");
+
     }
+    //test de borde
+    @Test
+    public void testCipherConNumeroNegativo(){
 
+        CesarCipher cesar = new CesarCipher(-10);
+        assertThrows(ArrayIndexOutOfBoundsException.class, ()->{cesar.cipher("abcd");} );
+    }
+    @Test
+    public void testCipherFueraDeRango(){
 
+        CesarCipher cesar = new CesarCipher(27);
+        assertThrows(ArrayIndexOutOfBoundsException.class, ()->{cesar.cipher("xyz");} );
+    }
     @Test
     public void testCipherConInputAlphabetVacio(){
 
@@ -80,38 +99,17 @@ public class CesarTest {
         assertEquals(cesar2.cipher("abcd"),"abcd");
 
     }
-
     @Test
-    public void testCipherConDistintasDistancia(){
-        CesarCipher cesar = new CesarCipher(5);
-        CesarCipher cesar1 = new CesarCipher(10);
-
-        assertEquals(cesar.cipher("abcd"),"fghi");
-        assertEquals(cesar.cipher("xyz"),"cde");
-
-        assertEquals(cesar1.cipher("abcd"),"klmn");
-        assertEquals(cesar1.cipher("xyz"),"hij");
-
-    }
-    @Test
-    public void testCipherFueraDeRango(){
-
-        CesarCipher cesar = new CesarCipher(27);
-        assertThrows(ArrayIndexOutOfBoundsException.class, ()->{cesar.cipher("xyz");} );
+    public void testCipherConNull(){
+        assertThrows(NullPointerException.class,()->{
+            cesar1.cipher(null);} );
     }
 
+
     @Test
-    public void testCipherConNumeroNegativo(){
-
-        CesarCipher cesar = new CesarCipher(-10);
-        assertThrows(ArrayIndexOutOfBoundsException.class, ()->{cesar.cipher("abcd");} );
-    }
-    @Test
-    void testCipherConCaracteresOutOfKeyboard(){
-
-        assertEquals(cesar1.cipher("ab!c·d"),"de!f·g");
-        assertEquals(cesar1.cipher("abcd"),"defg");
-
+    public void testDecipherConNull(){
+        assertThrows(NullPointerException.class, ()->{
+            cesar1.decipher(null);} );
     }
     /*@Test
     void testBad(){
