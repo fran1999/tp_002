@@ -17,17 +17,9 @@ public class  CesarCipher extends SubstitutionCipher {
         inputAlphabet.getChars(0,inputAlphabet.length(), alphabet, 0);
         jump = number;
     };
+    protected int calculateOffSet(){
+        return jump;
+    }
 
 
-	@Override
-	protected char callCipherChar(char inputChar) {
-		// TODO Auto-generated method stub		
-		return this.cipherChar(inputChar,this.jump);
-	}
-
-	@Override
-	protected char callDecipherChar(char inputChar) {
-		// TODO Auto-generated method stub
-		return this.decipherChar(inputChar,this.jump);
-	};
 }

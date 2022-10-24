@@ -10,7 +10,7 @@ public abstract class SubstitutionCipher implements Cipher{
         inputText.getChars(0, inputText.length(), result, 0);
 
         for (int idx=0; idx < result.length; idx++)
-            result[idx]=callCipherChar(result[idx]);
+            result[idx]=cipherChar(result[idx]);
         return new String(result); //alphabet[inputText.length()];
 	}
 
@@ -20,15 +20,13 @@ public abstract class SubstitutionCipher implements Cipher{
         inputText.getChars(0, inputText.length(), result, 0);
 
         for (int idx=0; idx < result.length; idx++)
-            result[idx]=callDecipherChar(result[idx]);        
+            result[idx]=decipherChar(result[idx]);
         return new String(result); 
 	}
+
+    protected abstract int calculateOffSet();
 	
-	protected abstract char callCipherChar(char inputChar);
-	
-	protected abstract char callDecipherChar(char inputChar);
-	
-    protected char cipherChar( char inputChar, int jump){
+    protected char cipherChar( char inputChar){
         int offset;
         char result;
         
@@ -37,7 +35,9 @@ public abstract class SubstitutionCipher implements Cipher{
         if(idx <0){
             result= inputChar;
         }
-        else{ offset = idx + jump;
+        else{
+            offset = idx + calculateOffSet();
+
             if(offset<alphabet.length){
                 result= alphabet[offset];
             }
@@ -49,7 +49,7 @@ public abstract class SubstitutionCipher implements Cipher{
 
     };
 
-    protected char decipherChar( char inputChar, int jump){
+    protected char decipherChar( char inputChar){
         int offset;
         char result;
         int idx=java.util.Arrays.binarySearch(alphabet,inputChar);
@@ -58,7 +58,7 @@ public abstract class SubstitutionCipher implements Cipher{
             result =inputChar;
         }
         else{ 
-            offset = idx - jump;
+            offset = idx - calculateOffSet();
             
             if(offset>=0){
                 result= alphabet[offset];

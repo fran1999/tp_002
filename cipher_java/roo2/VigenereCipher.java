@@ -6,35 +6,31 @@ import roo2.CharRing;
 
 public class  VigenereCipher extends SubstitutionCipher {
     CharRing keyword;
-    public  VigenereCipher(String inputAlphabet, String kword){
-        alphabet = new char[inputAlphabet.length()];
-        inputAlphabet.getChars(0,inputAlphabet.length(), alphabet, 0);
-        setKeyword(kword);
-    };
 
-    public  VigenereCipher() {
-        
+    public VigenereCipher(String inputAlphabet, String kword) {
+        alphabet = new char[inputAlphabet.length()];
+        inputAlphabet.getChars(0, inputAlphabet.length(), alphabet, 0);
+        setKeyword(kword);
+    }
+
+    ;
+
+    public VigenereCipher() {
+
         String inputAlphabet = DEFAULT_ALPHABET;
         alphabet = new char[inputAlphabet.length()];
-        inputAlphabet.getChars(0,inputAlphabet.length(), alphabet, 0);
+        inputAlphabet.getChars(0, inputAlphabet.length(), alphabet, 0);
         keyword = new CharRing("a");
-    };
-    
-	@Override
-	protected char callCipherChar(char inputChar) {
-		// TODO Auto-generated method stub		
-		return this.cipherChar(inputChar,this.currentOffset());
-	}
+    }
 
-	@Override
-	protected char callDecipherChar(char inputChar) {
-		// TODO Auto-generated method stub
-		return this.decipherChar(inputChar,this.currentOffset());
-	};
+
+    protected int calculateOffSet(){
+        return currentOffset();
+    }
     public void setKeyword(String srcString){
         keyword = new CharRing(srcString);
     }
     private int currentOffset(){
-        return keyword.next()- alphabet[0];
+        return keyword.next() - super.alphabet[0];
     }
 }
