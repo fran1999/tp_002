@@ -5,14 +5,12 @@ public abstract class SubstitutionCipher implements Cipher{
     char[] alphabet;
 
     public SubstitutionCipher(String inputAlphabet){
-        alphabet = new char[inputAlphabet.length()];
-        inputAlphabet.getChars(0, inputAlphabet.length(), alphabet, 0);
+        alphabet = this.obtenerArreglodeStrings(inputAlphabet);
     }
     
 	@Override
 	public String cipher(String inputText) {
-        char[] result = new char[inputText.length()] ;
-        inputText.getChars(0, inputText.length(), result, 0);
+        char[] result = this.obtenerArreglodeStrings(inputText);
 
         for (int idx=0; idx < result.length; idx++)
             result[idx]=cipherChar(result[idx]);
@@ -21,13 +19,18 @@ public abstract class SubstitutionCipher implements Cipher{
 
 	@Override
 	public String decipher(String inputText) {
-        char[] result = new char[inputText.length()] ;
-        inputText.getChars(0, inputText.length(), result, 0);
+        char[] result = this.obtenerArreglodeStrings(inputText);
 
         for (int idx=0; idx < result.length; idx++)
             result[idx]=decipherChar(result[idx]);
         return new String(result); 
 	}
+
+    private char[] obtenerArreglodeStrings(String inputText){
+        char[] arreglo = new char[inputText.length()] ;
+        inputText.getChars(0, inputText.length(), arreglo, 0);
+        return arreglo;
+    }
 
     protected abstract int calculateOffSetCipher(int idx);
 

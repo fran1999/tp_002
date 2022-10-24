@@ -15,8 +15,6 @@ public class  VigenereCipher extends SubstitutionCipher {
     public VigenereCipher() {
         this(DEFAULT_ALPHABET,"a");
     }
-
-
     protected int calculateOffSetCipher(int idx){
         return idx + currentOffset();
     }
