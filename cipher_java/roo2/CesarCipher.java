@@ -11,9 +11,6 @@ public class  CesarCipher extends SubstitutionCipher {
 
     public  CesarCipher(int number) {
         this(number, DEFAULT_ALPHABET);
-    };
-    protected int calculateOffSet(){
-        return jump;
     }
     protected int calculateOffSetCipher(int idx){
         return idx + jump;
