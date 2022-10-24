@@ -24,8 +24,12 @@ public abstract class SubstitutionCipher implements Cipher{
         return new String(result); 
 	}
 
-    protected abstract int calculateOffSet();
-	
+    protected abstract int calculateOffSetCipher(int idx);
+
+
+    protected abstract int calculateOffSetDecipher(int idx);
+
+
     protected char cipherChar( char inputChar){
         int offset;
         char result;
@@ -36,7 +40,7 @@ public abstract class SubstitutionCipher implements Cipher{
             result= inputChar;
         }
         else{
-            offset = idx + calculateOffSet();
+            offset = calculateOffSetCipher(idx);
 
             if(offset<alphabet.length){
                 result= alphabet[offset];
@@ -58,7 +62,7 @@ public abstract class SubstitutionCipher implements Cipher{
             result =inputChar;
         }
         else{ 
-            offset = idx - calculateOffSet();
+            offset = calculateOffSetDecipher(idx);
             
             if(offset>=0){
                 result= alphabet[offset];

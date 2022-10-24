@@ -24,8 +24,11 @@ public class  VigenereCipher extends SubstitutionCipher {
     }
 
 
-    protected int calculateOffSet(){
-        return currentOffset();
+    protected int calculateOffSetCipher(int idx){
+        return idx + currentOffset();
+    }
+    protected int calculateOffSetDecipher(int idx){
+        return idx - currentOffset();
     }
     public void setKeyword(String srcString){
         keyword = new CharRing(srcString);

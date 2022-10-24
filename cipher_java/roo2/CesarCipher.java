@@ -20,6 +20,12 @@ public class  CesarCipher extends SubstitutionCipher {
     protected int calculateOffSet(){
         return jump;
     }
+    protected int calculateOffSetCipher(int idx){
+        return idx + jump;
+    }
+    protected int calculateOffSetDecipher(int idx){
+        return idx - jump;
+    }
 
 
 }
