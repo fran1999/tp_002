@@ -1,8 +1,13 @@
 package roo2;
 
 public abstract class SubstitutionCipher implements Cipher{
-	final String DEFAULT_ALPHABET = "abcdefghijklmnopqrstuvwxyz";
+	final static String DEFAULT_ALPHABET = "abcdefghijklmnopqrstuvwxyz";
     char[] alphabet;
+
+    public SubstitutionCipher(String inputAlphabet){
+        alphabet = new char[inputAlphabet.length()];
+        inputAlphabet.getChars(0, inputAlphabet.length(), alphabet, 0);
+    }
     
 	@Override
 	public String cipher(String inputText) {
@@ -42,7 +47,7 @@ public abstract class SubstitutionCipher implements Cipher{
         else{
             offset = calculateOffSetCipher(idx);
 
-            if(offset<alphabet.length){
+            if(offset < alphabet.length){
                 result= alphabet[offset];
             }
             else{

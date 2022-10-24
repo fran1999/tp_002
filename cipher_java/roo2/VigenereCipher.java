@@ -8,19 +8,12 @@ public class  VigenereCipher extends SubstitutionCipher {
     CharRing keyword;
 
     public VigenereCipher(String inputAlphabet, String kword) {
-        alphabet = new char[inputAlphabet.length()];
-        inputAlphabet.getChars(0, inputAlphabet.length(), alphabet, 0);
+        super(inputAlphabet);
         setKeyword(kword);
     }
 
-    ;
-
     public VigenereCipher() {
-
-        String inputAlphabet = DEFAULT_ALPHABET;
-        alphabet = new char[inputAlphabet.length()];
-        inputAlphabet.getChars(0, inputAlphabet.length(), alphabet, 0);
-        keyword = new CharRing("a");
+        this(DEFAULT_ALPHABET,"a");
     }
 
 
