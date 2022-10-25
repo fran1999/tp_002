@@ -18,10 +18,12 @@ public class  RailFenceCipher implements Cipher {
         String result = "";
         char inputChar[] = new char[inputText.length()];
         inputText.getChars(0,inputText.length(), inputChar, 0);
+
         for(int idx =0; idx < inputText.length(); idx++){
             int rIndex= bIndex.next();            
             rails[rIndex]+=  inputChar[idx]; 
         }
+
         for(int idx=0; idx < rails.length; idx++){
             result += rails[idx];
         }
