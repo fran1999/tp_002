@@ -26,7 +26,9 @@ public class BouncingIndexTest {
     	assertEquals(bIndex.next(), 0);
     	assertEquals(bIndex.next(), 1);
     	assertEquals(bIndex.next(), 2);
-    	assertEquals(bIndex.next(), 0);
+    	assertEquals(bIndex.next(), 1);
+        assertEquals(bIndex.next(), 0);
+        assertEquals(bIndex.next(), 1);
     	
     }
     @Test
