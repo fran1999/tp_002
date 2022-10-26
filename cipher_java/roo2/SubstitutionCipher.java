@@ -12,8 +12,8 @@ public abstract class SubstitutionCipher implements Cipher{
 	public String cipher(String inputText) {
         char[] result = this.obtenerArreglodeStrings(inputText);
 
-        for (int idx=0; idx < result.length; idx++)
-            result[idx]=cipherChar(result[idx]);
+        for (int index=0; index < result.length; index++)
+            result[index]=cipherChar(result[index]);
         return new String(result); //alphabet[inputText.length()];
 	}
 
@@ -21,8 +21,8 @@ public abstract class SubstitutionCipher implements Cipher{
 	public String decipher(String inputText) {
         char[] result = this.obtenerArreglodeStrings(inputText);
 
-        for (int idx=0; idx < result.length; idx++)
-            result[idx]=decipherChar(result[idx]);
+        for (int index=0; index < result.length; index++)
+            result[index]=decipherChar(result[index]);
         return new String(result); 
 	}
 
@@ -32,19 +32,19 @@ public abstract class SubstitutionCipher implements Cipher{
         return arreglo;
     }
 
-    protected abstract int calculateOffSetCipher(int idx);
+    protected abstract int calculateOffSetCipher(int index);
 
-    protected abstract int calculateOffSetDecipher(int idx);
+    protected abstract int calculateOffSetDecipher(int index);
 
     protected char cipherChar( char inputChar){
         char result;
-        int idx=java.util.Arrays.binarySearch(alphabet,inputChar);
+        int index=java.util.Arrays.binarySearch(alphabet,inputChar);
         
-        if(idx <0){
+        if(index <0){
             result= inputChar;
         }
         else{
-            result = getResultCipher(calculateOffSetCipher(idx));
+            result = getResultCipher(calculateOffSetCipher(index));
         }
         return result;
 
@@ -52,13 +52,13 @@ public abstract class SubstitutionCipher implements Cipher{
 
     protected char decipherChar( char inputChar){
         char result;
-        int idx=java.util.Arrays.binarySearch(alphabet,inputChar);
+        int index=java.util.Arrays.binarySearch(alphabet,inputChar);
 
-        if(idx <0){
+        if(index <0){
             result =inputChar;
         }
         else{
-            result = getResultDecipher(calculateOffSetDecipher(idx));
+            result = getResultDecipher(calculateOffSetDecipher(index));
         }
         return result;
     }
