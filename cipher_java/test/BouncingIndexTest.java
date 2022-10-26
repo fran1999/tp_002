@@ -26,16 +26,24 @@ public class BouncingIndexTest {
     	assertEquals(bIndex.next(), 0);
     	assertEquals(bIndex.next(), 1);
     	assertEquals(bIndex.next(), 2);
-    	assertEquals(bIndex.next(), 1);
-        assertEquals(bIndex.next(), 0);
+    	assertEquals(bIndex.next(), 0);
         assertEquals(bIndex.next(), 1);
+        assertEquals(bIndex.next(), 2);
     	
     }
     @Test
     void testNextNegative() {
     	assertEquals(bIndex.next(),0);
     }
+    /*@Test
+    void testNext() {
+        assertEquals(bIndex.next(), 0);
+        assertEquals(bIndex.next(), 1);
+        assertEquals(bIndex.next(), 2);
+        assertEquals(bIndex.next(), 1);
+        assertEquals(bIndex.next(), 0);
+        assertEquals(bIndex.next(), 1);
 
-
+    }*/
 
 }
