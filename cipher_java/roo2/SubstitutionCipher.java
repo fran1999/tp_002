@@ -1,72 +1,83 @@
 package roo2;
 
 public abstract class SubstitutionCipher implements Cipher{
-	final String DEFAULT_ALPHABET = "abcdefghijklmnopqrstuvwxyz";
+	final static String DEFAULT_ALPHABET = "abcdefghijklmnopqrstuvwxyz";
     char[] alphabet;
-    // agregar el constructor en Super
+
+    public SubstitutionCipher(String inputAlphabet){
+        alphabet = this.obtenerArreglodeStrings(inputAlphabet);
+    }
+    
 	@Override
 	public String cipher(String inputText) {
-        char[] result = new char[inputText.length()] ;
-        inputText.getChars(0, inputText.length(), result, 0);
+        char[] result = this.obtenerArreglodeStrings(inputText);
 
-        for (int idx=0; idx < result.length; idx++)
-            result[idx]=callCipherChar(result[idx]);
+        for (int index=0; index < result.length; index++)
+            result[index]=cipherChar(result[index]);
         return new String(result); //alphabet[inputText.length()];
 	}
 
 	@Override
 	public String decipher(String inputText) {
-        char[] result = new char[inputText.length()] ;
-        inputText.getChars(0, inputText.length(), result, 0);
+        char[] result = this.obtenerArreglodeStrings(inputText);
 
-        for (int idx=0; idx < result.length; idx++)
-            result[idx]=callDecipherChar(result[idx]);        
+        for (int index=0; index < result.length; index++)
+            result[index]=decipherChar(result[index]);
         return new String(result); 
 	}
-	
-	protected abstract char callCipherChar(char inputChar);
-	
-	protected abstract char callDecipherChar(char inputChar);
-	
-    protected char cipherChar( char inputChar, int jump){
-        int offset;
+
+    private char[] obtenerArreglodeStrings(String inputText){
+        char[] arreglo = new char[inputText.length()] ;
+        inputText.getChars(0, inputText.length(), arreglo, 0);
+        return arreglo;
+    }
+
+    protected abstract int calculateOffSetCipher(int index);
+
+    protected abstract int calculateOffSetDecipher(int index);
+
+    protected char cipherChar( char inputChar){
         char result;
-        //renombrar la variable idx a index
-        int idx=java.util.Arrays.binarySearch(alphabet,inputChar);
+        int index=java.util.Arrays.binarySearch(alphabet,inputChar);
         
-        if(idx <0){
+        if(index <0){
             result= inputChar;
         }
-        else{ offset = idx + jump;
-            if(offset<alphabet.length){
-                result= alphabet[offset];
-            }
-            else{
-                result= alphabet[offset - alphabet.length];
-            }
+        else{
+            result = getResultCipher(calculateOffSetCipher(index));
         }
         return result;
 
-    };
+    }
 
-    protected char decipherChar( char inputChar, int jump){
-        int offset;
+    protected char decipherChar( char inputChar){
         char result;
-        int idx=java.util.Arrays.binarySearch(alphabet,inputChar);
-        
-        if(idx <0){
+        int index=java.util.Arrays.binarySearch(alphabet,inputChar);
+
+        if(index <0){
             result =inputChar;
         }
-        else{ 
-            offset = idx - jump;
-            
-            if(offset>=0){
-                result= alphabet[offset];
-            }
-            else{
-                result= alphabet[ alphabet.length + offset];
-            }
+        else{
+            result = getResultDecipher(calculateOffSetDecipher(index));
         }
         return result;
-    };
+    }
+
+    private char getResultCipher(int offset) {
+        if(offset < alphabet.length){
+            return alphabet[offset];
+        }
+        else{
+            return alphabet[offset - alphabet.length];
+        }
+    }
+
+    private char getResultDecipher(int offset) {
+        if(offset>=0){
+            return alphabet[offset];
+        }
+        else{
+            return alphabet[ alphabet.length + offset];
+        }
+    }
 }

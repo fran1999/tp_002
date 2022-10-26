@@ -8,8 +8,8 @@ public class  RailFenceCipher implements Cipher {
 
     public  RailFenceCipher(int railCount){
         rails = new String[railCount];
-        for (int idx =0; idx < rails.length; idx++)
-            rails[idx]="";
+        for (int index =0; index < rails.length; index++)
+            rails[index]="";
         bIndex = new BouncingIndex(railCount);
 
     };
@@ -18,12 +18,14 @@ public class  RailFenceCipher implements Cipher {
         String result = "";
         char inputChar[] = new char[inputText.length()];
         inputText.getChars(0,inputText.length(), inputChar, 0);
-        for(int idx =0; idx < inputText.length(); idx++){
+
+        for(int index =0; index < inputText.length(); index++){
             int rIndex= bIndex.next();            
-            rails[rIndex]+=  inputChar[idx]; 
+            rails[rIndex]+=  inputChar[index]; 
         }
-        for(int idx=0; idx < rails.length; idx++){
-            result += rails[idx];
+
+        for(int index=0; index < rails.length; index++){
+            result += rails[index];
         }
         return result; 
     }; 
