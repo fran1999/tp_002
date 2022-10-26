@@ -3,7 +3,7 @@ package roo2;
 public abstract class SubstitutionCipher implements Cipher{
 	final String DEFAULT_ALPHABET = "abcdefghijklmnopqrstuvwxyz";
     char[] alphabet;
-    
+    // agregar el constructor en Super
 	@Override
 	public String cipher(String inputText) {
         char[] result = new char[inputText.length()] ;
@@ -31,7 +31,7 @@ public abstract class SubstitutionCipher implements Cipher{
     protected char cipherChar( char inputChar, int jump){
         int offset;
         char result;
-        
+        //renombrar la variable idx a index
         int idx=java.util.Arrays.binarySearch(alphabet,inputChar);
         
         if(idx <0){

@@ -4,7 +4,7 @@ package roo2;
 
 public class  CharRing {
     char[] source;
-    int idx;
+    int idx; //renombrar
     
     public  CharRing(String srcString){
         source = new char[srcString.length()];

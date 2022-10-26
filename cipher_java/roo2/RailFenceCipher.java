@@ -4,7 +4,7 @@ import roo2.BouncingIndex;
 
 public class  RailFenceCipher implements Cipher {
     String[] rails;
-    BouncingIndex bIndex;
+    BouncingIndex bIndex; //renombrar bIndex
 
     public  RailFenceCipher(int railCount){
         rails = new String[railCount];
