@@ -14,6 +14,19 @@ public class  BouncingIndex {
     };
 
     public int next( ){
+
+        int result;
+
+        if (index < maxSize){
+            result = index++;
+        }
+        else { index = 0;
+            result =  index++;
+        }
+
+        return result;
+    }
+    /*public int next( ){
         int result;
         if(maxSizeAux == 0){
             //para cuando llega a cero directamente va al siguente ya que si no llega a devolver dos veces cero
@@ -26,14 +39,13 @@ public class  BouncingIndex {
             maxSizeAux--;
             index--;
         }
-        
+
         if (index < maxSizeAux){
             result = index++;
             }
         else { maxSizeAux--;
             result =  --index;
         }
-        return result;            
-    }
+        return result;}*/
 
 }

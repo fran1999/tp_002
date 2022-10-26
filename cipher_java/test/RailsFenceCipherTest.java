@@ -21,21 +21,21 @@ public class RailsFenceCipherTest {
     void testCipherEquals(){
         assertEquals(this.railFence1.cipher("hola"),"hola");
         assertEquals(this.railFence2.cipher("hola"),"hloa");
-        assertEquals(this.railFence3.cipher("argentina"),"anaretngi");
+        assertEquals(this.railFence3.cipher("argentina"),"aeirnngta");
 
     }
     @Test
     void testCipherNotEquals(){
         assertNotEquals(this.railFence1.cipher("hola"),"hlaa");
         assertNotEquals(this.railFence2.cipher("hola"),"hola");
-        assertNotEquals(this.railFence3.cipher("argentina"),"aeirnngta");
+        assertNotEquals(this.railFence3.cipher("argentina"),"aaaaaa");
     }
     @Test
     void testDecipher(){
         //aca devuelde el mismo string
         assertEquals(this.railFence1.decipher("hola"),"hola");
-        assertEquals(this.railFence2.decipher("hola"),"hola");
-        assertEquals(this.railFence3.decipher("hola"),"hola");
+        assertEquals(this.railFence2.decipher("hloa"),"hola");
+        assertEquals(this.railFence3.decipher("aeirnngta"),"argentina");
     }
     @Test
     void testDecipherNotEquals(){

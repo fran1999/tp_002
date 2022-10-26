@@ -31,8 +31,36 @@ public class  RailFenceCipher implements Cipher {
     }; 
 
     public String decipher(String inputText){
-        
-        return inputText; 
-    }; 
+        return this.decryption(inputText, this.rails.length);
+    }
+
+
+    public String decryption(String cipherText,int depth)
+    {
+        int r=depth,len=cipherText.length();
+        int c=len/depth;
+        char mat[][]=new char[r][c];
+        int k=0;
+
+        String plainText="";
+
+
+        for(int i=0;i< r;i++)
+        {
+            for(int j=0;j< c;j++)
+            {
+                mat[i][j]=cipherText.charAt(k++);
+            }
+        }
+        for(int i=0;i< c;i++)
+        {
+            for(int j=0;j< r;j++)
+            {
+                plainText+=mat[j][i];
+            }
+        }
+
+        return plainText;
+    }
 
 }
