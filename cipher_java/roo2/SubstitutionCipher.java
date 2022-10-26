@@ -37,47 +37,36 @@ public abstract class SubstitutionCipher implements Cipher{
     protected abstract int calculateOffSetDecipher(int index);
 
     protected char cipherChar( char inputChar){
-        char result;
         int index=java.util.Arrays.binarySearch(alphabet,inputChar);
         
-        if(index <0){
-            result= inputChar;
+        if(!(index <0)) {
+        	return getResultCipher(calculateOffSetCipher(index));
         }
-        else{
-            result = getResultCipher(calculateOffSetCipher(index));
-        }
-        return result;
+        return inputChar;
 
     }
 
     protected char decipherChar( char inputChar){
-        char result;
         int index=java.util.Arrays.binarySearch(alphabet,inputChar);
+        
+        if(!(index <0)) {
+        	return getResultDecipher(calculateOffSetDecipher(index));
+        }
+        return inputChar;
 
-        if(index <0){
-            result =inputChar;
-        }
-        else{
-            result = getResultDecipher(calculateOffSetDecipher(index));
-        }
-        return result;
     }
 
     private char getResultCipher(int offset) {
-        if(offset < alphabet.length){
-            return alphabet[offset];
-        }
-        else{
-            return alphabet[offset - alphabet.length];
-        }
+    	if(!(offset < alphabet.length)) {
+    		return alphabet[offset - alphabet.length];
+    	}
+    	return alphabet[offset];
     }
 
     private char getResultDecipher(int offset) {
-        if(offset>=0){
-            return alphabet[offset];
-        }
-        else{
-            return alphabet[ alphabet.length + offset];
-        }
+    	if(!(offset>=0)) {
+    		return alphabet[ alphabet.length + offset];
+    	}
+    	return alphabet[offset];
     }
 }
