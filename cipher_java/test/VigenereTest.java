@@ -40,23 +40,11 @@ public class VigenereTest {
         assertNotEquals(this.vigenere1.cipher("cifrar"), "eznjtz");
     }
 
-    @Test
-    void testCipherSinKeywork() {
-        assertEquals(this.vigenere.cipher("cifrar"), "cifrar");
-    }
 
     @Test
     void testCipherConUnaLetraEnKeyword() {
         this.vigenere.setKeyword("c");
         assertEquals(this.vigenere.cipher("cifrar"), "ekhtct");
-    }
-
-    @Test
-    void testCipherSinDatos() {
-        this.vigenere.setKeyword("cifrando");
-        assertEquals(this.vigenere.cipher(""), "");
-        assertEquals(this.vigenere1.cipher(""), "");
-        assertEquals(this.vigenere2.cipher(""), "");
     }
 
     @Test
@@ -77,19 +65,7 @@ public class VigenereTest {
         assertEquals(vigenere.cipher("k"), "k");
     }
 
-    @Test
-    void testCipherConNull() {
-        assertThrows(NullPointerException.class, () -> {
-            this.vigenere.cipher(null);
-        });
-    }
 
-    @Test
-    void testDecipherConNull() {
-        assertThrows(NullPointerException.class, () -> {
-            this.vigenere.decipher(null);
-        });
-    }
     @Test
     void testDecipherEquals() {
         this.vigenere.setKeyword("cifrando");
@@ -97,10 +73,7 @@ public class VigenereTest {
         assertEquals(this.vigenere1.decipher("eznjtz"), "cifrar");
         assertEquals(this.vigenere2.decipher("479"), "123");
     }
-    @Test
-    void testDecipherSinKeywork() {
-        assertEquals(this.vigenere.decipher("cifrar"), "cifrar");
-    }
+
 
     @Test
     void testDecipherConUnaLetraEnKeyword() {
@@ -116,6 +89,8 @@ public class VigenereTest {
         assertEquals(this.vigenere2.decipher(""), "");
     }
 
+
+
     @Test
     void testDecipherConNumero() {
 
@@ -124,4 +99,43 @@ public class VigenereTest {
         assertEquals(this.vigenere1.decipher("1234"), "1234");
         assertEquals(this.vigenere2.decipher("4797"), "1234");
     }
+    //test border
+    @Test
+    void testDecipherSinKeywork() {
+        assertEquals(this.vigenere.decipher("cifrar"), "cifrar");
+    }
+
+    @Test
+    void testCipherSinKeywork() {
+        assertEquals(this.vigenere.cipher("cifrar"), "cifrar");
+    }
+    @Test
+    void testDecipherConNull() {
+        assertThrows(NullPointerException.class, () -> {
+            this.vigenere.decipher(null);
+        });
+    }
+    @Test
+    void testCipherConNull() {
+        assertThrows(NullPointerException.class, () -> {
+            this.vigenere.cipher(null);
+        });
+    }
+    @Test
+    void testCipherSinDatos() {
+        this.vigenere.setKeyword("cifrando");
+        assertEquals(this.vigenere.cipher(""), "");
+        assertEquals(this.vigenere1.cipher(""), "");
+        assertEquals(this.vigenere2.cipher(""), "");
+    }
+    @Test
+    void testCipherConAlfabetoVacio() {
+        VigenereCipher vigenere = new VigenereCipher("", "");
+        vigenere.setKeyword("hola");
+
+        assertEquals(vigenere.cipher("d"), "d");
+        assertEquals(vigenere.cipher("f"), "f");
+        assertEquals(vigenere.cipher("k"), "k");
+    }
+
 }

@@ -44,10 +44,24 @@ public class RailsFenceCipherTest {
         assertNotEquals(this.railFence2.decipher("aaa"),"aas");
         assertNotEquals(this.railFence3.decipher("aaa"),"aas");
     }
+    //test de borde
 
     @Test
     void testRailsNegativos(){
         assertThrows(NegativeArraySizeException.class,()->{new RailFenceCipher(-1);});
+    }
+    @Test
+    void testCipherConStringVacio(){
+        assertEquals(this.railFence1.cipher(""),"");
+        assertEquals(this.railFence2.cipher(""),"");
+        assertEquals(this.railFence3.cipher(""),"");
+    }
+    @Test
+    void testDecipherConStringVacio(){
+        //aca devuelde el mismo string
+        assertEquals(this.railFence1.decipher(""),"");
+        assertEquals(this.railFence2.decipher(""),"");
+        assertEquals(this.railFence3.decipher(""),"");
     }
 
 }
