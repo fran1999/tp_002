@@ -18,6 +18,7 @@ public class  RailFenceCipher implements Cipher {
         String result = "";
         char inputChar[] = new char[inputText.length()];
         inputText.getChars(0,inputText.length(), inputChar, 0);
+        bIndex.calcular(inputText.length());
 
         for(int index =0; index < inputText.length(); index++){
             int rIndex= bIndex.next();            
@@ -28,39 +29,33 @@ public class  RailFenceCipher implements Cipher {
             result += rails[index];
         }
         return result; 
-    }; 
+    }
+    /*public String cipher2(String inputText){
+        String result = "";
+        char inputChar[] = new char[inputText.length()];
+        inputText.getChars(0,inputText.length(), inputChar, 0);
+        bIndex.calcularCipher(inputText.length());
+
+        for(int index =0; index < inputText.length(); index++){
+            int rIndex= bIndex.nextCipher(index);
+            //rails[rIndex]+=  inputChar[index];
+            result += inputChar[rIndex];
+        }
+        return result;
+    }*/
 
     public String decipher(String inputText){
-        return this.decryption(inputText, this.rails.length);
-    }
+        String result = "";
+        char inputChar[] = new char[inputText.length()];
+        inputText.getChars(0,inputText.length(), inputChar, 0);
+        bIndex.calcularDecipher(inputText.length());
 
-
-    public String decryption(String cipherText,int depth)
-    {
-        int r=depth,len=cipherText.length();
-        int c=len/depth;
-        char mat[][]=new char[r][c];
-        int k=0;
-
-        String plainText="";
-
-
-        for(int i=0;i< r;i++)
-        {
-            for(int j=0;j< c;j++)
-            {
-                mat[i][j]=cipherText.charAt(k++);
-            }
+        for(int index =0; index < inputText.length(); index++){
+            int rIndex= bIndex.nextDecipher(index+1);
+            //rails[rIndex]+=  inputChar[index];
+            result += inputChar[rIndex];
         }
-        for(int i=0;i< c;i++)
-        {
-            for(int j=0;j< r;j++)
-            {
-                plainText+=mat[j][i];
-            }
-        }
-
-        return plainText;
+        return result;
     }
 
 }
