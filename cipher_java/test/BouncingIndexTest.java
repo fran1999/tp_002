@@ -23,17 +23,20 @@ public class BouncingIndexTest {
 
     @Test
     void testNext() {
-    	assertEquals(bIndex.next(), 0);
-    	assertEquals(bIndex.next(), 1);
-    	assertEquals(bIndex.next(), 2);
-    	assertEquals(bIndex.next(), 0);
-        assertEquals(bIndex.next(), 1);
-        assertEquals(bIndex.next(), 2);
+        bIndex.CalcularlistaConPosiciones(9);
+
+    	assertEquals(bIndex.nextCipher(0), 0);
+    	assertEquals(bIndex.nextCipher(1), 1);
+    	assertEquals(bIndex.nextCipher(2), 2);
+    	assertEquals(bIndex.nextCipher(3), 0);
+        assertEquals(bIndex.nextCipher(4), 1);
+        assertEquals(bIndex.nextCipher(5), 2);
     	
     }
     @Test
     void testNextNegative() {
-    	assertEquals(bIndex.next(),0);
+        bIndex.CalcularlistaConPosiciones(9);
+    	assertEquals(bIndex.nextCipher(0),0);
     }
     /*@Test
     void testNext() {
