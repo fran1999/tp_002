@@ -1,6 +1,6 @@
-package roo2;
+package ar.edu.unlp.info.oo2.biblioteca.roo2;
 
-import roo2.CharRing;
+import ar.edu.unlp.info.oo2.biblioteca.roo2.CharRing;
 
 //import roo2.Cipher;
 

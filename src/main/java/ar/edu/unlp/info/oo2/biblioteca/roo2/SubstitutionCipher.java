@@ -1,4 +1,4 @@
-package roo2;
+package ar.edu.unlp.info.oo2.biblioteca.roo2;
 
 public abstract class SubstitutionCipher implements Cipher{
 	final static String DEFAULT_ALPHABET = "abcdefghijklmnopqrstuvwxyz";

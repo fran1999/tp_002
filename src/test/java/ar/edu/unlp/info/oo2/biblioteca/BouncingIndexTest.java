@@ -1,4 +1,4 @@
-package org;
+package ar.edu.unlp.info.oo2.biblioteca;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
@@ -7,8 +7,8 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import roo2.BouncingIndex;
-import roo2.CesarCipher;
+import ar.edu.unlp.info.oo2.biblioteca.roo2.BouncingIndex;
+import ar.edu.unlp.info.oo2.biblioteca.roo2.CesarCipher;
 
 public class BouncingIndexTest {
 	BouncingIndex bIndex;

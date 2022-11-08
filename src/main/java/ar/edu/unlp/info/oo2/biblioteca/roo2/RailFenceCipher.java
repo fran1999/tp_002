@@ -1,6 +1,6 @@
-package roo2;
+package ar.edu.unlp.info.oo2.biblioteca.roo2;
 
-import roo2.BouncingIndex;
+import ar.edu.unlp.info.oo2.biblioteca.roo2.BouncingIndex;
 
 public class  RailFenceCipher implements Cipher {
     String[] rails;

@@ -1,9 +1,11 @@
+package ar.edu.unlp.info.oo2.biblioteca;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import roo2.CesarCipher;
-import roo2.VigenereCipher;
-import roo2.RailFenceCipher;
+import ar.edu.unlp.info.oo2.biblioteca.roo2.CesarCipher;
+import ar.edu.unlp.info.oo2.biblioteca.roo2.VigenereCipher;
+import ar.edu.unlp.info.oo2.biblioteca.roo2.RailFenceCipher;
 
 public class ciphercmd {
     public static void main(String[] args)
