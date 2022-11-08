@@ -1,4 +1,4 @@
-package test;
+package org;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
@@ -26,11 +26,11 @@ public class BouncingIndexTest {
         bIndex.CalcularlistaConPosiciones(9);
 
     	assertEquals(bIndex.nextCipher(0), 0);
-    	assertEquals(bIndex.nextCipher(1), 1);
-    	assertEquals(bIndex.nextCipher(2), 2);
-    	assertEquals(bIndex.nextCipher(3), 0);
-        assertEquals(bIndex.nextCipher(4), 1);
-        assertEquals(bIndex.nextCipher(5), 2);
+    	assertEquals(bIndex.nextCipher(1), 4);
+    	assertEquals(bIndex.nextCipher(2), 8);
+    	assertEquals(bIndex.nextCipher(3), 1);
+        assertEquals(bIndex.nextCipher(4), 3);
+        assertEquals(bIndex.nextCipher(5), 5);
     	
     }
     @Test
@@ -38,15 +38,6 @@ public class BouncingIndexTest {
         bIndex.CalcularlistaConPosiciones(9);
     	assertEquals(bIndex.nextCipher(0),0);
     }
-    /*@Test
-    void testNext() {
-        assertEquals(bIndex.next(), 0);
-        assertEquals(bIndex.next(), 1);
-        assertEquals(bIndex.next(), 2);
-        assertEquals(bIndex.next(), 1);
-        assertEquals(bIndex.next(), 0);
-        assertEquals(bIndex.next(), 1);
 
-    }*/
 
 }

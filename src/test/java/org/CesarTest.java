@@ -1,13 +1,11 @@
-package test;
-
-import static org.junit.Assert.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
+package org;
 
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import roo2.CesarCipher;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CesarTest {
     CesarCipher cesar1;
