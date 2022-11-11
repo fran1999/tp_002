@@ -1,10 +1,10 @@
-package ar.edu.unlp.info.oo2.biblioteca;
+package ar.edu.unlp.info.oo2.tp;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import ar.edu.unlp.info.oo2.biblioteca.roo2.CesarCipher;
-import ar.edu.unlp.info.oo2.biblioteca.roo2.VigenereCipher;
+import ar.edu.unlp.info.oo2.tp.roo2.CesarCipher;
+import ar.edu.unlp.info.oo2.tp.roo2.VigenereCipher;
 
 public class deciphercmd {
     public static void main(String[] args)

@@ -1,10 +1,12 @@
-package ar.edu.unlp.info.oo2.biblioteca;
+package ar.edu.unlp.info.oo2.tp;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import ar.edu.unlp.info.oo2.biblioteca.roo2.VigenereCipher;
+import ar.edu.unlp.info.oo2.tp.roo2.VigenereCipher;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class VigenereTest {
     VigenereCipher vigenere;

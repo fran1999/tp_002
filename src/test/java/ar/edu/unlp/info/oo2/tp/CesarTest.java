@@ -1,11 +1,12 @@
-package ar.edu.unlp.info.oo2.biblioteca;
+package ar.edu.unlp.info.oo2.tp;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import ar.edu.unlp.info.oo2.biblioteca.roo2.CesarCipher;
-
-import static org.junit.jupiter.api.Assertions.*;
+import ar.edu.unlp.info.oo2.tp.roo2.CesarCipher;
 
 public class CesarTest {
     CesarCipher cesar1;
