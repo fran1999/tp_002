@@ -20,7 +20,7 @@ public class CesarTest {
     void setUp() {
         Factory f = new Factory();
         this.cesar1 = new CesarCipher(3);
-        this.cesar2 = (VigenereCipher) f.getCesarCipher("123456789", 3);
+        this.cesar2 = f.getCesarCipher("123456789", 3);
 
     }
 

@@ -3,7 +3,7 @@ package ar.edu.unlp.info.oo2.tp.roo2;
 
 public class Factory {
 
-    public Cipher getCesarCipher(String alfabeto, int salto){
+    public VigenereCipher getCesarCipher(String alfabeto, int salto){
         String clave;
         int longitudAlfabeto = alfabeto.length();
         if(longitudAlfabeto > 0) {
