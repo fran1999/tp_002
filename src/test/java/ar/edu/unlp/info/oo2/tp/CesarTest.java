@@ -7,18 +7,20 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ar.edu.unlp.info.oo2.tp.roo2.CesarCipher;
+import ar.edu.unlp.info.oo2.tp.roo2.Factory;
+import ar.edu.unlp.info.oo2.tp.roo2.VigenereCipher;
 
 public class CesarTest {
     CesarCipher cesar1;
-    CesarCipher cesar2;
+    VigenereCipher cesar2;
 
 
 
     @BeforeEach
     void setUp() {
-
+        Factory f = new Factory();
         this.cesar1 = new CesarCipher(3);
-        this.cesar2 = new CesarCipher(3,"123456789");
+        this.cesar2 = (VigenereCipher) f.getCesarCipher("123456789", 3);
 
     }
 
