@@ -13,7 +13,7 @@ import ar.edu.unlp.info.oo2.tp.roo2.VigenereCipher;
 public class CesarTest {
     CesarCipher cesar1;
     VigenereCipher cesar2;
-
+    VigenereCipher cesar3;
 
 
     @BeforeEach

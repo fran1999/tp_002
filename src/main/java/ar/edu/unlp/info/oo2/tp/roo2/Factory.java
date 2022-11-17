@@ -2,26 +2,15 @@ package ar.edu.unlp.info.oo2.tp.roo2;
 
 
 public class Factory {
+	
+	private String calculateIndex(String alfabeto,int jump) {
+		int index = jump % alfabeto.length();
+		String character = Character.toString(alfabeto.charAt(index));
+		return character;
+	}
 
     public VigenereCipher getCesarCipher(String alfabeto, int salto){
-        String clave;
-        int longitudAlfabeto = alfabeto.length();
-        if(longitudAlfabeto > 0) {
-            int offset = salto;
-            if (offset >= longitudAlfabeto) {
-                while (offset >= longitudAlfabeto) {
-                    offset = offset - longitudAlfabeto;
-                }
-            }
-            clave = String.valueOf(alfabeto.charAt(offset));
-            for (int j = 0; j <= alfabeto.length()-2; j++) {
-                clave += alfabeto.charAt(offset);
-            }
-        } else {
-            alfabeto= "abcdefghijklmnopqrstuvwxyz";
-            clave = "a";
-        }
-        return new VigenereCipher(alfabeto, clave);
+    	return new VigenereCipher(alfabeto,calculateIndex(alfabeto,salto));
     }
 
     public Cipher getVigenereCipher(String alfabeto, String clave){
