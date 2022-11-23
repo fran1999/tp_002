@@ -1,7 +1,7 @@
 package ar.edu.unlp.info.oo2.tp.roo2;
 
 
-public class Factory {
+public class Facade {
 	
 	private String calculateIndex(String alfabeto,int jump) {
 		int index = jump % alfabeto.length();
@@ -16,4 +16,9 @@ public class Factory {
     public Cipher getVigenereCipher(String alfabeto, String clave){
         return new VigenereCipher(alfabeto,clave);
     }
+
+	public RailFenceCipher getRailFance(int rails){
+		return new RailFenceCipher(rails);
+	}
+
 }
