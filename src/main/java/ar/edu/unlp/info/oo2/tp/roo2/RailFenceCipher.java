@@ -6,6 +6,10 @@ public class  RailFenceCipher implements Cipher {
     String[] rails;
     BouncingIndex bIndex; //renombrar bIndex
 
+    public  RailFenceCipher(){
+        bIndex = new BouncingIndex(3);
+    }
+
     public  RailFenceCipher(int railCount){
         rails = new String[railCount];
         for (int index =0; index < rails.length; index++)

@@ -4,6 +4,11 @@ package ar.edu.unlp.info.oo2.tp.roo2;
 
 public class  CesarCipher extends SubstitutionCipher {
     int jump = 0;
+
+    public CesarCipher(){
+        super(DEFAULT_ALPHABET);
+        jump = 0;
+    };
     public  CesarCipher(int number, String inputAlphabet){
         super(inputAlphabet);
         jump = number;
