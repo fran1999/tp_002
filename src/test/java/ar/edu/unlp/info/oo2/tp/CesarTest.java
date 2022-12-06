@@ -9,10 +9,11 @@ import org.junit.jupiter.api.Test;
 import ar.edu.unlp.info.oo2.tp.roo2.CesarCipher;
 import ar.edu.unlp.info.oo2.tp.roo2.InterfaceFramework;
 import ar.edu.unlp.info.oo2.tp.roo2.VigenereCipher;
+import ar.edu.unlp.info.oo2.tp.roo2.Cipher;
 
 public class CesarTest {
     CesarCipher cesar1;
-    VigenereCipher cesar2;
+    Cipher cesar2;
     VigenereCipher cesar3;
 
 

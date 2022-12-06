@@ -62,7 +62,6 @@ public class ColumnarTranspositionCipher implements Cipher{
 	private char[][] orderColumns(char [] keyword,String numberLocation,char [][]matrix) {
 		char [][] result = new char[matrix.length][keyword.length];
 			for (int i = 0; i < this.numOfRows; i++) {
-				System.out.println("i: "+ i);
 				int col;
 				if(i == keyword.length)
 					break;
@@ -112,18 +111,24 @@ public class ColumnarTranspositionCipher implements Cipher{
 	public String cipher(String inputText) {
 		// TODO Auto-generated method stub
 		char[][] matrix = calculateMatrix(inputText);
-		print2D(matrix);
+//		print2D(matrix);
 		int[] keywordOrderList = this.keywordOrder(this.keyword);
 		String numberLocation = this.getNumberLocation(this.keyword, keywordOrderList);
 		char [][] reOrderedMatrix = this.orderColumns(this.keyword, numberLocation, matrix);
-		print2D(reOrderedMatrix);
+//		print2D(reOrderedMatrix);
 		return this.cipherWord(reOrderedMatrix);
 	}
 
 	@Override
 	public String decipher(String inputText) {
 		// TODO Auto-generated method stub
-		return null;
+		char[][] matrix = calculateMatrix(inputText);
+		print2D(matrix);
+		int[] keywordOrderList = this.keywordOrder(this.keyword);
+		String numberLocation = this.getNumberLocation(this.keyword, keywordOrderList);
+		char [][] reOrderedMatrix = this.orderColumns(this.keyword, numberLocation, matrix);
+		print2D(reOrderedMatrix);
+		return this.cipherWord(reOrderedMatrix).replace("*", "");
 	}
 	
 
