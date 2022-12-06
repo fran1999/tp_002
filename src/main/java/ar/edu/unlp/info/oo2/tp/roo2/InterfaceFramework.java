@@ -19,4 +19,8 @@ public class InterfaceFramework {
     public ColumnarTranspositionCipher crearColumnar (String keyword) {
     	return new ColumnarTranspositionCipher(keyword);
     }
+    
+    public ComplexCipher crearComplexCipher () {
+    	return new ComplexCipher();
+    }
 }
