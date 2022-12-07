@@ -6,7 +6,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import ar.edu.unlp.info.oo2.tp.roo2.CesarCipher;
 import ar.edu.unlp.info.oo2.tp.roo2.InterfaceFramework;
 import ar.edu.unlp.info.oo2.tp.roo2.VigenereCipher;
 import ar.edu.unlp.info.oo2.tp.roo2.Cipher;

@@ -30,10 +30,7 @@ public class ColumnarTranspositionCipher implements Cipher{
     private StringBuilder fillBlanks(StringBuilder msg) {
         // in case characters don't fit the entire grid perfectly.
         int extraLetters = msg.length() % keyword.length;
-        //System.out.println(extraLetters);
         int dummyCharacters = keyword.length - extraLetters;
-//        System.out.println(dummyCharacters);
-
         if (extraLetters != 0){
             for (int i = 0; i < dummyCharacters; i++) {
                 msg.append("*");
@@ -97,25 +94,14 @@ public class ColumnarTranspositionCipher implements Cipher{
         }
         return numLoc;
     } // getting number location function
-    
-    public static void print2D(char mat[][])
-    {
-        // Loop through all rows
-        for (char[] row : mat)
- 
-            // converting each row as string
-            // and then printing in a separate line
-            System.out.println((row));
-    }
+
 	@Override
 	public String cipher(String inputText) {
 		// TODO Auto-generated method stub
 		char[][] matrix = calculateMatrix(inputText);
-//		print2D(matrix);
 		int[] keywordOrderList = this.keywordOrder(this.keyword);
 		String numberLocation = this.getNumberLocation(this.keyword, keywordOrderList);
 		char [][] reOrderedMatrix = this.orderColumns(this.keyword, numberLocation, matrix);
-//		print2D(reOrderedMatrix);
 		return this.cipherWord(reOrderedMatrix);
 	}
 
@@ -123,11 +109,9 @@ public class ColumnarTranspositionCipher implements Cipher{
 	public String decipher(String inputText) {
 		// TODO Auto-generated method stub
 		char[][] matrix = calculateMatrix(inputText);
-		print2D(matrix);
 		int[] keywordOrderList = this.keywordOrder(this.keyword);
 		String numberLocation = this.getNumberLocation(this.keyword, keywordOrderList);
 		char [][] reOrderedMatrix = this.orderColumns(this.keyword, numberLocation, matrix);
-		print2D(reOrderedMatrix);
 		return this.cipherWord(reOrderedMatrix).replace("*", "");
 	}
 	

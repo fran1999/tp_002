@@ -8,7 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import ar.edu.unlp.info.oo2.tp.roo2.BouncingIndex;
-import ar.edu.unlp.info.oo2.tp.roo2.CesarCipher;
+
 
 public class BouncingIndexTest {
 	BouncingIndex bIndex;

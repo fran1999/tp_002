@@ -32,8 +32,8 @@ public class ColumnarTranspositionTest {
     
     @Test
     void testDecipherEquals() {
-        assertEquals(colTrans1.decipher("HTEODGSIAILV*E*"), "THE DOG IS ALIVE");
-//        assertEquals(colTrans1.decipher("HTEKSYSIBULE"), "THE SKY IS BLUE");
+        assertEquals(colTrans1.decipher("HTEODGSIAILV*E*"), "THEDOGISALIVE");
+        assertEquals(colTrans1.decipher("HTEKSYSIBULE"), "THESKYISBLUE");
     }
 }
 
