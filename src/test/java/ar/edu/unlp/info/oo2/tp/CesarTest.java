@@ -12,15 +12,14 @@ import ar.edu.unlp.info.oo2.tp.roo2.VigenereCipher;
 import ar.edu.unlp.info.oo2.tp.roo2.Cipher;
 
 public class CesarTest {
-    CesarCipher cesar1;
-    Cipher cesar2;
-    VigenereCipher cesar3;
+    VigenereCipher cesar1;
+    VigenereCipher cesar2;
 
 
     @BeforeEach
     void setUp() {
         InterfaceFramework f = new InterfaceFramework();
-        this.cesar1 = new CesarCipher(3);
+        this.cesar1 = f.crearCesar(3);
         this.cesar2 = f.crearCesar("123456789", 3);
 
     }
@@ -58,8 +57,9 @@ public class CesarTest {
 
     @Test
     public void testCipherConDistintasDistancia(){
-        CesarCipher cesar = new CesarCipher(5);
-        CesarCipher cesar1 = new CesarCipher(10);
+        InterfaceFramework f = new InterfaceFramework();
+        VigenereCipher cesar = f.crearCesar(5);
+        VigenereCipher cesar1 = f.crearCesar(10);
 
         assertEquals(cesar.cipher("abcd"),"fghi");
         assertEquals(cesar.cipher("xyz"),"cde");
@@ -79,22 +79,16 @@ public class CesarTest {
     //test de borde
     @Test
     public void testCipherConNumeroNegativo(){
-
-        CesarCipher cesar = new CesarCipher(-10);
-        assertThrows(ArrayIndexOutOfBoundsException.class, ()->{cesar.cipher("abcd");} );
-    }
-    @Test
-    public void testCipherFueraDeRango(){
-
-        CesarCipher cesar = new CesarCipher(27);
-        assertThrows(ArrayIndexOutOfBoundsException.class, ()->{cesar.cipher("xyz");} );
+        InterfaceFramework f = new InterfaceFramework();
+        assertThrows(StringIndexOutOfBoundsException.class, ()->{f.crearCesar(-10);} );
     }
     @Test
     public void testCipherConInputAlphabetVacio(){
+        InterfaceFramework f = new InterfaceFramework();
 
-        CesarCipher cesar= new CesarCipher(3,"");
-        CesarCipher cesar1= new CesarCipher(4,"");
-        CesarCipher cesar2= new CesarCipher(5,"");
+        VigenereCipher cesar= f.crearCesar("",3);
+        VigenereCipher cesar1= f.crearCesar("",4);
+        VigenereCipher cesar2= f.crearCesar("",5);
 
         assertEquals(cesar.cipher("abcd"),"abcd");
         assertEquals(cesar1.cipher("abcd"),"abcd");

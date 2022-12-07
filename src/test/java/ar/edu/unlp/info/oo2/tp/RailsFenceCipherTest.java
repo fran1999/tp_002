@@ -53,8 +53,8 @@ public class RailsFenceCipherTest {
 
     @Test
     void testRailsNegativos(){
-
-        assertThrows(NegativeArraySizeException.class,()->{new RailFenceCipher(-1);});
+        RailFenceCipher r = new RailFenceCipher(-1);
+        assertThrows(NegativeArraySizeException.class,()->{r.cipher("cifrar");});
     }
     @Test
     void testCipherConStringVacio(){

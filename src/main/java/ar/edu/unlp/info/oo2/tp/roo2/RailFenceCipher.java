@@ -1,20 +1,15 @@
 package ar.edu.unlp.info.oo2.tp.roo2;
 
-import ar.edu.unlp.info.oo2.tp.roo2.BouncingIndex;
-
 public class  RailFenceCipher implements Cipher {
-    String[] rails;
-    BouncingIndex bIndex; //renombrar bIndex
+
+    BouncingIndex bouncingIndex; //renombrar bIndex
 
     public  RailFenceCipher(){
-        bIndex = new BouncingIndex(3);
+        bouncingIndex = new BouncingIndex(3);
     }
 
     public  RailFenceCipher(int railCount){
-        rails = new String[railCount];
-        for (int index =0; index < rails.length; index++)
-            rails[index]="";
-        bIndex = new BouncingIndex(railCount);
+        bouncingIndex = new BouncingIndex(railCount);
 
     };
 
@@ -23,10 +18,10 @@ public class  RailFenceCipher implements Cipher {
         String result = "";
         char inputChar[] = new char[inputText.length()];
         inputText.getChars(0,inputText.length(), inputChar, 0);
-        bIndex.CalcularlistaConPosiciones(inputText.length());
+        bouncingIndex.CalcularlistaConPosiciones(inputText.length());
 
         for(int index =0; index < inputText.length(); index++){
-            int rIndex= bIndex.nextCipher(index);
+            int rIndex= bouncingIndex.nextCipher(index);
             //rails[rIndex]+=  inputChar[index];
             result += inputChar[rIndex];
         }
@@ -37,10 +32,10 @@ public class  RailFenceCipher implements Cipher {
         String result = "";
         char inputChar[] = new char[inputText.length()];
         inputText.getChars(0,inputText.length(), inputChar, 0);
-        bIndex.CalcularlistaConPosiciones(inputText.length());
+        bouncingIndex.CalcularlistaConPosiciones(inputText.length());
 
         for(int index =0; index < inputText.length(); index++){
-            int rIndex= bIndex.nextDecipher(index+1);
+            int rIndex= bouncingIndex.nextDecipher(index+1);
             //rails[rIndex]+=  inputChar[index];
             result += inputChar[rIndex];
         }
