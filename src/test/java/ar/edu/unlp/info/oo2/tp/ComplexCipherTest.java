@@ -34,4 +34,12 @@ public class ComplexCipherTest {
 
 	    }
 	    
+	    @Test
+	    void testRemoveCipher() {
+	    	complex.addCipher(cipher1);
+	    	complex.addCipher(cipher2);
+	    	complex.removeCipher();
+	    	assertEquals(complex.cipher("DIEGO"), "FKGIQ");
+	    }
+	    
 }

@@ -13,6 +13,11 @@ public class ComplexCipher implements Cipher{
 	public void addCipher(Cipher cipher) {
 		this.ciphers.add(cipher);
 	}
+	
+	public Cipher removeCipher(){
+		int lastIndex = this.ciphers.size() - 1;
+		return this.ciphers.remove(lastIndex);
+	}
 
 	@Override
 	public String cipher(String inputText) {
